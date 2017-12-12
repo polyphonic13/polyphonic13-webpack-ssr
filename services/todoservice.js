@@ -6,11 +6,11 @@ export default {
       setTimeout(() => {
         resolve([
           { header: 'Today' },
-          { id: ++id, avatar: 'http://i.pravatar.cc/60?cachebust=' + id, title: 'Brunch this weekend?', subtitle: "<span class='grey--text text--darken-2'>Ali Connors</span> — I'll be in your neighborhood doing errands this weekend. Do you want to hang out?" },
+          { id: ++id, avatar: 'http://i.pravatar.cc/60?cachebust=' + id, title: 'Build Campaign', subtitle: "<span class='grey--text text--darken-2'>Ali Connors</span> - Create Campaign for new client" },
           { divider: true, inset: true },
-          { id: ++id, avatar: 'http://i.pravatar.cc/60?cachebust=' + id, title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>', subtitle: "<span class='grey--text text--darken-2'>to Alex, Scott, Jennifer</span> — Wish I could come, but I'm out of town this weekend." },
+          { id: ++id, avatar: 'http://i.pravatar.cc/60?cachebust=' + id, title: 'Add List Feature', subtitle: "<span class='grey--text text--darken-2'>Alex Scott</span> - Make a ToDo List Feature" },
           { divider: true, inset: true },
-          { id: ++id, avatar: 'http://i.pravatar.cc/60?cachebust=' + id, title: 'Oui oui', subtitle: "<span class='grey--text text--darken-2'>Sandra Adams</span> — Do you have Paris recommendations? Have you ever been?" }
+          { id: ++id, avatar: 'http://i.pravatar.cc/60?cachebust=' + id, title: 'Remove Tech Debt', subtitle: "<span class='grey--text text--darken-2'>Sandra Adams</span> — Clean up the code" }
         ]);
       }, 600);
     });
