@@ -1,19 +1,11 @@
-# Vuetify Webpack SSR Template
+# Vuetify Webpack SSR Demo
 
-> Vuetify SSR Webpack Template
-
-## Build Setup
+## Setup
 
 ``` bash
-vue init vuetifyjs/webpack-ssr
-
-cd webpack-ssr
-
-# npm
-npm install
-
 # yarn
 yarn
+yarn run dev
 ```
 
 For additional information, please visit the [Official Documentation](https://vuetifyjs.com).
