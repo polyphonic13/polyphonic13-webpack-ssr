@@ -79,6 +79,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-footer :fixed="fixed" app>
+      <p v-if="error" style="color:red">{{error}}</p>
       <span>&copy; 2017</span>
     </v-footer>
   </v-app>
@@ -86,7 +87,7 @@
 
 <script>
   import Meta from 'mixins/meta'
-
+  import { mapState } from 'vuex';
   export default {
     mixins: [Meta],
 
@@ -104,7 +105,10 @@
         right: true,
         rightDrawer: false,
         title: 'Vuetify.js'
-      }
-    }
+      };
+    },
+    computed: mapState({
+      error: state => state.error,
+    }),
   }
 </script>

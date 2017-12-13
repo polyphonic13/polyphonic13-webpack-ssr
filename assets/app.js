@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueResource from 'vue-resource';
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.css'
 import App from './App.vue'
@@ -8,6 +9,7 @@ import { createStore } from 'store/index'
 import { createRouter } from 'router/index'
 import { sync } from 'vuex-router-sync'
 
+Vue.use(VueResource);
 Vue.use(Vuetify)
 
 Object.keys(Components).forEach(key => {

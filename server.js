@@ -7,7 +7,7 @@ const compression = require('compression')
 const resolve = file => path.resolve(__dirname, file)
 const { createBundleRenderer } = require('vue-server-renderer')
 const redirects = require('./router/301.json')
-
+const apiRoutes = require('./api');
 const isProd = process.env.NODE_ENV === 'production'
 const useMicroCache = process.env.MICRO_CACHE !== 'false'
 const serverInfo =
@@ -64,6 +64,7 @@ app.use(favicon('./static/favicon.ico'))
 app.use('/static', serve('./static', true))
 app.use('/public', serve('./public', true))
 app.use('/static/robots.txt', serve('./robots.txt'))
+app.use('/api/todo', apiRoutes.todo);
 
 app.get('/sitemap.xml', (req, res) => {
   res.setHeader("Content-Type", "text/xml")
