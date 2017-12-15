@@ -1,16 +1,14 @@
-const path = require('path')
-const webpack = require('webpack')
-const vueConfig = require('./vue-loader.config')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const vueConfig = require('./vue-loader.config');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
-const isProd = process.env.NODE_ENV === 'production'
-const resolve = (file) => path.resolve(__dirname, file)
+const isProd = process.env.NODE_ENV === 'production';
+const resolve = (file) => path.resolve(__dirname, file);
 
 module.exports = {
-  devtool: isProd
-    ? false
-    : '#cheap-module-source-map',
+  devtool: isProd ? false : '#cheap-module-source-map',
   output: {
     path: resolve('../public'),
     publicPath: '/public/',
@@ -34,8 +32,7 @@ module.exports = {
   },
   module: {
     noParse: /es6-promise\.js$/, // avoid webpack shimming process
-    rules: [
-      {
+    rules: [{
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueConfig
@@ -67,16 +64,18 @@ module.exports = {
     maxEntrypointSize: 300000,
     hints: isProd ? 'warning' : false
   },
-  plugins: isProd
-    ? [
-        new webpack.optimize.UglifyJsPlugin({
-          compress: { warnings: false }
-        }),
-        new ExtractTextPlugin({
-          filename: 'common.[chunkhash].css'
-        }),
-      ]
-    : [
-        new FriendlyErrorsPlugin()
-      ]
-}
+  plugins: isProd ?
+    [
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      }),
+      new ExtractTextPlugin({
+        filename: 'common.[chunkhash].css'
+      }),
+    ] :
+    [
+      new FriendlyErrorsPlugin()
+    ]
+};
