@@ -7,6 +7,8 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const isProd = process.env.NODE_ENV === 'production';
 const resolve = (file) => path.resolve(__dirname, file);
 
+const srcPath = '../src/';
+
 module.exports = {
   devtool: isProd ? false : '#cheap-module-source-map',
   output: {
